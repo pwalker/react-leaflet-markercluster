@@ -29,7 +29,7 @@ function removeMarkersWithSameCoordinates(markers) {
   return filteredMarkers;
 }
 
-export default class ReactLeafletMarkerClusterGroup extends LayerGroup {
+export class ReactLeafletMarkerClusterGroup extends LayerGroup {
   componentWillMount() {
     const { markers, options } = this.props;
 
@@ -173,3 +173,5 @@ ReactLeafletMarkerClusterGroup.propTypes = {
 ReactLeafletMarkerClusterGroup.defaultProps = {
   markers: [],
 };
+
+export default ReactLeafletMarkerClusterGroup;

@@ -10,9 +10,10 @@ import uglifyCSS from 'gulp-clean-css';
 
 // code transplantation with browser support
 import es from 'event-stream';
-import babelify from 'babelify';
-import browserify from 'browserify';
-import source from 'vinyl-source-stream';
+// import babelify from 'babelify';
+// import browserify from 'browserify';
+// import source from 'vinyl-source-stream';
+import webpack from 'webpack-stream';
 
 const rootPath = path.join(__dirname, '..');
 const srcPath = path.join(rootPath, 'src');
@@ -31,10 +32,14 @@ gulp.task('dist:script', () => (
     gulp.src(path.join(srcPath, 'react-leaflet-markercluster.js'))
       .pipe(babel({ presets: ['es2015', 'react'] }))
       .pipe(gulp.dest(distPath)),
-    browserify(path.join(srcPath, 'react-leaflet-markercluster.js'), { debug: true })
-      .transform(babelify, { presets: ['es2015', 'react'] })
-      .bundle()
-      .pipe(source('react-leaflet-markercluster.browser.js'))
+    // browserify(path.join(srcPath, 'index.js'), { debug: true })
+    //   .transform(babelify, { presets: ['es2015', 'react'] })
+    //   .bundle()
+    //   .pipe(source('react-leaflet-markercluster.browser.js'))
+    //   .pipe(gulp.dest(distPath)),
+    gulp.src(path.join(srcPath, 'index.js'))
+      .pipe(webpack())
+      .pipe(rename({ basename: 'react-leaflet-markercluster.browser' }))
       .pipe(gulp.dest(distPath)),
   ])
 ));
@@ -48,7 +53,7 @@ gulp.task('dist:styles', () => (
 gulp.task('uglify:script', () => (
   gulp.src([
     path.join(distPath, 'react-leaflet-markercluster.js'),
-    path.join(distPath, 'react-leaflet-markercluster.browser.js'),
+    // path.join(distPath, 'react-leaflet-markercluster.browser.js'),
   ])
     .pipe(uglifyJS())
     .pipe(rename({ suffix: '.min' }))

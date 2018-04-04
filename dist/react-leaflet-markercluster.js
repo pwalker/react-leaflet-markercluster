@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ReactLeafletMarkerClusterGroup = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -55,7 +56,7 @@ function removeMarkersWithSameCoordinates(markers) {
   return filteredMarkers;
 }
 
-var ReactLeafletMarkerClusterGroup = function (_LayerGroup) {
+var ReactLeafletMarkerClusterGroup = exports.ReactLeafletMarkerClusterGroup = function (_LayerGroup) {
   _inherits(ReactLeafletMarkerClusterGroup, _LayerGroup);
 
   function ReactLeafletMarkerClusterGroup() {
@@ -202,7 +203,6 @@ var ReactLeafletMarkerClusterGroup = function (_LayerGroup) {
 // TODO: better describe prop objects as shapes
 
 
-exports.default = ReactLeafletMarkerClusterGroup;
 ReactLeafletMarkerClusterGroup.propTypes = {
   // List of markers with required lat and lng keys
   markers: _propTypes2.default.arrayOf(_propTypes2.default.object),
@@ -223,3 +223,5 @@ ReactLeafletMarkerClusterGroup.propTypes = {
 ReactLeafletMarkerClusterGroup.defaultProps = {
   markers: []
 };
+
+exports.default = ReactLeafletMarkerClusterGroup;

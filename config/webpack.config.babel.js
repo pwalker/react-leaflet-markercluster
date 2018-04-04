@@ -10,6 +10,7 @@ module.exports = {
   output: {
     path: rootPath,
     filename: './dist/bundle.js',
+    library: 'ReactLeafletMarkerClusterGroup',
   },
   devServer: {
     port: 8080,
