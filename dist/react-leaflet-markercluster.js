@@ -55,16 +55,16 @@ function removeMarkersWithSameCoordinates(markers) {
   return filteredMarkers;
 }
 
-var MarkerClusterGroup = function (_LayerGroup) {
-  _inherits(MarkerClusterGroup, _LayerGroup);
+var ReactLeafletMarkerClusterGroup = function (_LayerGroup) {
+  _inherits(ReactLeafletMarkerClusterGroup, _LayerGroup);
 
-  function MarkerClusterGroup() {
-    _classCallCheck(this, MarkerClusterGroup);
+  function ReactLeafletMarkerClusterGroup() {
+    _classCallCheck(this, ReactLeafletMarkerClusterGroup);
 
-    return _possibleConstructorReturn(this, (MarkerClusterGroup.__proto__ || Object.getPrototypeOf(MarkerClusterGroup)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ReactLeafletMarkerClusterGroup.__proto__ || Object.getPrototypeOf(ReactLeafletMarkerClusterGroup)).apply(this, arguments));
   }
 
-  _createClass(MarkerClusterGroup, [{
+  _createClass(ReactLeafletMarkerClusterGroup, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
       var _props = this.props,
@@ -196,14 +196,14 @@ var MarkerClusterGroup = function (_LayerGroup) {
     }
   }]);
 
-  return MarkerClusterGroup;
+  return ReactLeafletMarkerClusterGroup;
 }(_reactLeaflet.LayerGroup);
 
 // TODO: better describe prop objects as shapes
 
 
-exports.default = MarkerClusterGroup;
-MarkerClusterGroup.propTypes = {
+exports.default = ReactLeafletMarkerClusterGroup;
+ReactLeafletMarkerClusterGroup.propTypes = {
   // List of markers with required lat and lng keys
   markers: _propTypes2.default.arrayOf(_propTypes2.default.object),
   // List of react-leaflet markers
@@ -220,6 +220,6 @@ MarkerClusterGroup.propTypes = {
   onPopupClose: _propTypes2.default.func
 };
 
-MarkerClusterGroup.defaultProps = {
+ReactLeafletMarkerClusterGroup.defaultProps = {
   markers: []
 };

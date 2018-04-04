@@ -29,7 +29,7 @@ function removeMarkersWithSameCoordinates(markers) {
   return filteredMarkers;
 }
 
-export default class MarkerClusterGroup extends LayerGroup {
+export default class ReactLeafletMarkerClusterGroup extends LayerGroup {
   componentWillMount() {
     const { markers, options } = this.props;
 
@@ -153,7 +153,7 @@ export default class MarkerClusterGroup extends LayerGroup {
 }
 
 // TODO: better describe prop objects as shapes
-MarkerClusterGroup.propTypes = {
+ReactLeafletMarkerClusterGroup.propTypes = {
   // List of markers with required lat and lng keys
   markers: PropTypes.arrayOf(PropTypes.object),
   // List of react-leaflet markers
@@ -170,6 +170,6 @@ MarkerClusterGroup.propTypes = {
   onPopupClose: PropTypes.func,
 };
 
-MarkerClusterGroup.defaultProps = {
+ReactLeafletMarkerClusterGroup.defaultProps = {
   markers: [],
 };
