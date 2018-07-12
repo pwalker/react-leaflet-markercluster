@@ -70,7 +70,7 @@
     "html-webpack-plugin": "^2.29.0",
     "jest": "^22.1.4",
     "leaflet": "^1.1.0",
-    "leaflet.markercluster": "Leaflet/Leaflet.markercluster#9b45d266224f1c2f805d2905151cc2a024d5fa7b",
+    "leaflet.markercluster": "ridewithgps/Leaflet.markercluster",
     "lint-staged": "^6.1.0",
     "node-sass": "^4.5.3",
     "npm-sass": "^2.2.1",
@@ -95,7 +95,7 @@
   },
   "peerDependencies": {
     "leaflet": "^1.1.0",
-    "leaflet.markercluster": "^1.0.6",
+    "leaflet.markercluster": "^1.3.0",
     "prop-types": "^15.5.7",
     "react-leaflet": "^1.4.0"
   },
